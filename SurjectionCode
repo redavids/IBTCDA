@@ -1,0 +1,24 @@
+# Aim to convert RGB in to Grayscale
+# Use dictionary(surjection) to do the mapping
+class Pixel (object):
+initial set: a pixel itself can be interpreted by RGB and Grayscale, like 2 properties
+def _init_(self, RGB, gray):
+self.RGB = RGB
+self.gray = gray
+# By research, RGB is a tuple with three numbers (R, G, B); gray is an int
+# e.g. for a random picked dark blue, RGB = rgb(86, 0, 255); a green, RGB = rgb(0, 255, 50)
+# Then we design the mapping ourselves, with data set for both RGB and Grayscale
+# An example for a raw idea; G 1, G 2 are both grayscales, should be replaced with a number 0-255
+# We want all RGB color pickers in the "rainbow"
+design = [Pixel((86, 0, 255), G_1), Pixel((0, 255, 50), G_2), Pixel((1, 255, 50), G_2), Pixel((r, g, b), G_255)]
+# Since surjection, we'll have two RGB tuples mapping to one Grayscale integer
+# Question: (a, b, cl), (a, b, c2) -> G1 ?
+# OR (a, bl, cl), (a, b2, c2) -> G1 ?
+# OR even (al, bl, cl), (a2, b2, c2) -> G1 ?
+# Solve: We should define a way to map the tuples of RGBs to grayscale values in a way that distributes tuples
+# across the grayscale spectrum in a way that is data-informative: naively an even
+#distribution might work but you won't know this until you run it on some images
+Mapping = dict([(p.RGB, p.gray) for p in design])
+# The result will look like ((0, 0, 1):1, (1, 2, 3):6, ..., (255, 255, 255): 2551
+# Definition of surjection: function f: A->B, for all b in B, there exists at least one a in A such that f(a)=b
+
