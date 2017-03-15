@@ -12,7 +12,9 @@ import matplotlib.cm as cm
 np.set_printoptions(threshold=np.inf)
 
 #image=misc.imread('C:\\Users\\Chris\\Downloads\\checkerboard.jpg')
-image=misc.imread('C:\\Users\\Chris\\Downloads\\small kazak.jpg')
+image=misc.imread('C:\\Users\\Chris\\Downloads\\small kazak.jpg') #We have a problem here. Because of how we set up the code, this lines requires us to either
+																  #change the file name in the directory to match this or we have to edit the code to match
+																  #the file name in the directory.
 #print (image[0])
 
 #plt.imshow(image) #Loads Image
@@ -28,7 +30,9 @@ for rownum in range(len(image)):
         grey[rownum][colnum] = average(image[rownum][colnum])
         
 plt.imshow(grey, cmap = cm.Greys_r)
-plt.show()
+plt.show() #This pushes out the image that we use in the other block of code to anaylzse for persistent pairs
+
+
 #image=misc.imread('C:\\Users\\Chris\\Downloads\\cat.jpg')
 #print(image) #Gives the RGB values for all pixels. The Inner most brackers give the RGB values for the rows
 #print (image.shape) #Gives the height and width of the image
