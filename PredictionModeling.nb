@@ -1,0 +1,289 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9583,        281]
+NotebookOptionsPosition[      8727,        255]
+NotebookOutlinePosition[      9071,        270]
+CellTagsIndexPosition[      9028,        267]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"feb01CrimeData", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\Chris\\\\workspace\\\\DVM\\\\2_01.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"feb15CrimeData", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\Chris\\\\workspace\\\\DVM\\\\2_15.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mar01CrimeData", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\Chris\\\\workspace\\\\DVM\\\\3_01.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mar15CrimeData", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\Chris\\\\workspace\\\\DVM\\\\3_15.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mar29CrimeData", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\Chris\\\\workspace\\\\DVM\\\\3_29.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"apr12CrimeData", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\Chris\\\\workspace\\\\DVM\\\\4_12.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"apr26CrimeData", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\Chris\\\\workspace\\\\DVM\\\\4_26.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"may10CrimeData", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\Chris\\\\workspace\\\\DVM\\\\5_10.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"may24CrimeData", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\Chris\\\\workspace\\\\DVM\\\\5_24.csv\>\"", "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.7190309848218994`*^9, 3.7190313117938366`*^9}, {
+  3.7190313548426666`*^9, 3.719031463402399*^9}, {3.7190315169708943`*^9, 
+  3.719031606256711*^9}, {3.7190316557459264`*^9, 
+  3.7190316871269712`*^9}},ExpressionUUID->"f1327b3f-906b-44f4-bbd5-\
+f1c0dbcd859f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"feb01Length", "=", 
+   RowBox[{"Length", "[", 
+    RowBox[{"Drop", "[", 
+     RowBox[{"feb01CrimeData", ",", "1"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"feb15Length", " ", "=", 
+   RowBox[{"Length", "[", 
+    RowBox[{"Drop", "[", 
+     RowBox[{"feb15CrimeData", ",", "1"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mar01Length", "=", 
+   RowBox[{"Length", "[", 
+    RowBox[{"Drop", "[", 
+     RowBox[{"mar01CrimeData", ",", "1"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mar15Length", "=", 
+   RowBox[{"Length", "[", 
+    RowBox[{"Drop", "[", 
+     RowBox[{"mar15CrimeData", ",", "1"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mar29Length", " ", "=", " ", 
+   RowBox[{"Length", "[", 
+    RowBox[{"Drop", "[", 
+     RowBox[{"mar29CrimeData", ",", "1"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"apr12Length", "=", 
+   RowBox[{"Length", "[", 
+    RowBox[{"Drop", "[", 
+     RowBox[{"apr12CrimeData", ",", "1"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"apr26Length", "=", 
+   RowBox[{"Length", "[", 
+    RowBox[{"Drop", "[", 
+     RowBox[{"apr26CrimeData", ",", "1"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"may10Length", "=", 
+    RowBox[{"Length", "[", 
+     RowBox[{"Drop", "[", 
+      RowBox[{"may10CrimeData", ",", "1"}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"may24Length", "=", 
+    RowBox[{"Length", "[", 
+     RowBox[{"Drop", "[", 
+      RowBox[{"may24CrimeData", ",", "1"}], "]"}], "]"}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"keyLength", " ", "=", " ", "may10Length"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.719031662392282*^9, 3.719031800301573*^9}, {
+   3.719031842077834*^9, 3.71903197806074*^9}, {3.719350858053935*^9, 
+   3.719350994116411*^9}, {3.719351039905059*^9, 3.7193511413890624`*^9}, {
+   3.7193512526674995`*^9, 3.71935125784783*^9}, {3.719351347982737*^9, 
+   3.7193513487480984`*^9}, {3.719351678842409*^9, 3.7193516859382043`*^9}, {
+   3.71935191685458*^9, 3.7193519843473144`*^9}, 3.719352266477621*^9, {
+   3.719352296874153*^9, 3.719352305026331*^9}, 3.7193524636104336`*^9, {
+   3.7193533639835386`*^9, 
+   3.7193533989453497`*^9}},ExpressionUUID->"c36de122-79ce-4dc6-b490-\
+91547a956948"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"feb01KeyPts", "=", 
+   RowBox[{"RandomSample", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "feb01Length", "]"}], ",", "keyLength"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"feb15KeyPts", " ", "=", " ", 
+   RowBox[{"RandomSample", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "feb15Length", "]"}], ",", "keyLength"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mar01KeyPts", "=", 
+   RowBox[{"RandomSample", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "mar01Length", "]"}], ",", "keyLength"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mar15KeyPts", " ", "=", " ", 
+   RowBox[{"RandomSample", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "mar15Length", "]"}], ",", "keyLength"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mar29KeyPts", " ", "=", " ", 
+   RowBox[{"RandomSample", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "mar29Length", "]"}], ",", "keyLength"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"apr12KeyPts", " ", "=", " ", 
+   RowBox[{"RandomSample", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "apr12Length", "]"}], ",", " ", "keyLength"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"apr26KeyPts", " ", "=", " ", 
+   RowBox[{"RandomSample", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "apr26Length", "]"}], ",", "keyLength"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"may10KeyPts", " ", "=", " ", 
+   RowBox[{"RandomSample", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "may10Length", "]"}], ",", "keyLength"}], "]"}]}], 
+  " ", ";"}]}], "Input",
+ CellChangeTimes->{{3.7193519975294905`*^9, 3.7193519993491125`*^9}, {
+  3.719352223795951*^9, 3.719352238654871*^9}, {3.719352274635319*^9, 
+  3.719352361263997*^9}, {3.7193525264620953`*^9, 3.719352526683297*^9}, {
+  3.7193525591789236`*^9, 3.719352563103542*^9}, {3.719352911579087*^9, 
+  3.7193529136785684`*^9}, {3.719352967926652*^9, 3.7193529719422865`*^9}, {
+  3.719353063968383*^9, 3.7193531089525228`*^9}, {3.719353164679674*^9, 
+  3.7193533506188297`*^9}, {3.7193534077487335`*^9, 
+  3.719353439826561*^9}},ExpressionUUID->"8e203a63-9919-4bbb-b608-\
+5a646a037888"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{"Drop", "[", 
+      RowBox[{"feb01CrimeData", ",", "1"}], "]"}], ",", "1"}], "]"}], 
+   "\[LeftDoubleBracket]", 
+   RowBox[{"1", ",", "3"}], "\[RightDoubleBracket]"}], "-", 
+  RowBox[{
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{"Drop", "[", 
+      RowBox[{"feb01CrimeData", ",", "1"}], "]"}], ",", "1"}], "]"}], 
+   "\[LeftDoubleBracket]", 
+   RowBox[{"1", ",", "2"}], 
+   "\[RightDoubleBracket]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{"Drop", "[", 
+      RowBox[{"feb15CrimeData", ",", "1"}], "]"}], ",", "1"}], "]"}], 
+   "\[LeftDoubleBracket]", 
+   RowBox[{"1", ",", "3"}], "\[RightDoubleBracket]"}], "-", 
+  RowBox[{
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{"Drop", "[", 
+      RowBox[{"feb15CrimeData", ",", "1"}], "]"}], ",", "1"}], "]"}], 
+   "\[LeftDoubleBracket]", 
+   RowBox[{"1", ",", "2"}], "\[RightDoubleBracket]"}]}]}], "Input",ExpressionU\
+UID->"34d703fb-1ff2-4fe2-86c8-63e871e61ae0"],
+
+Cell[BoxData["0.`"], "Output",
+ CellChangeTimes->{3.7193510048461666`*^9, 
+  3.71935344862018*^9},ExpressionUUID->"63ddccca-96ec-440b-92a3-bd3f61e14512"],
+
+Cell[BoxData["105.`"], "Output",
+ CellChangeTimes->{3.7193510048461666`*^9, 
+  3.719353448625196*^9},ExpressionUUID->"819bebb7-ae30-4533-abaa-\
+38cbd3b35c40"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2047, 59, 183, "Input", "ExpressionUUID" -> \
+"f1327b3f-906b-44f4-bbd5-f1c0dbcd859f"],
+Cell[2608, 81, 2451, 67, 202, "Input", "ExpressionUUID" -> \
+"c36de122-79ce-4dc6-b490-91547a956948"],
+Cell[5062, 150, 2241, 57, 164, InheritFromParent, "ExpressionUUID" -> \
+"8e203a63-9919-4bbb-b608-5a646a037888"],
+Cell[CellGroupData[{
+Cell[7328, 211, 1066, 32, 50, "Input", "ExpressionUUID" -> \
+"34d703fb-1ff2-4fe2-86c8-63e871e61ae0"],
+Cell[8397, 245, 153, 2, 30, "Output", "ExpressionUUID" -> \
+"63ddccca-96ec-440b-92a3-bd3f61e14512"],
+Cell[8553, 249, 158, 3, 30, "Output", "ExpressionUUID" -> \
+"819bebb7-ae30-4533-abaa-38cbd3b35c40"]
+}, Open  ]]
+}
+]
+*)
+
