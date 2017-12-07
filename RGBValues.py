@@ -20,8 +20,10 @@ image=misc.imread('C:\\Users\\Chris\\Downloads\\small kazak.jpg') #We have a pro
 #plt.imshow(image) #Loads Image
 #plt.show() #Shows the image window
 
+#average method
 def average(pixel):
     return (pixel [0] + pixel [1] + pixel [2])/3
+#luminosity method
 #def modedversion(pixel):
     #return (0.21*pixel [0] + 0.72*pixel [1] + 0.07*pixel [2])
 grey = np.zeros((image.shape[0], image.shape[1]))
