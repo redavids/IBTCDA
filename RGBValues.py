@@ -28,7 +28,8 @@ grey = np.zeros((image.shape[0], image.shape[1]))
 for rownum in range(len(image)):
     for colnum in range(len(image[rownum])):
         grey[rownum][colnum] = average(image[rownum][colnum])
-        
+        #use line below when running modedversion function for our code
+	#grey[rownum][colnum] = modedversion(image[rownum][colnum])
 plt.imshow(grey, cmap = cm.Greys_r)
 plt.show() #This pushes out the image that we use in the other block of code to anaylzse for persistent pairs
 
