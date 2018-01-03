@@ -1,9 +1,36 @@
 # IBTCDA
 Image-based topological and combinatorial data analysis (IBTCA)
 
-This github is desigend to be used in combination with the open-sour software available at https://github.com/AppliedMathematicsANU/diamorse. Their documentation is provided below:
 
-References
+
+This github is designed to be used in combination with the open-source software available at https://github.com/AppliedMathematicsANU/diamorse. Their documentation is provided below.
+
+Installation instructions: 
+
+You will need git installed on your computer for both repositories.  Got to https://github.com/ for extensive documentation, tutorials, and basic commands for git. 
+
+Clone the repository https://github.com/redavids/IBTCDA.git using the command git clone or download as a zip. Then cd into IBTCDA to use the functionality. Filepaths will have to be customized on your machine to use both repositories. 
+
+Other dependencies: 
+
+Python Version 2.7 or higher
+
+Java Version WHICH VERSION OF JAVA ARE YOU GUYS USING
+
+Mathematica version 9 or higher to exploit the notebook PredictionModeling.nb
+
+
+Reference for IBTCDA: 
+
+Image-based data analysis via discrete Morse theory and persistent homology.  NEED TO ADD ARXIV IDENTIFIER
+
+NEED TO COPY AND PASTE CODE USAGE INSTRUCTIONS FROM PAPER
+
+NEED TO PROVIDE MORE OF AN EXPLANATION OF MATHEMATICA NOTEBOOK
+
+
+
+References and Installation for diamorse:
 
 Delgado-Friedrichs, O., Robins, V., & Sheppard, A. (2015). Skeletonization and partitioning of digital images using discrete Morse theory. Pattern Analysis and Machine Intelligence, IEEE Transactions on, 37(3), 654-666.
 
