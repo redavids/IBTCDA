@@ -1,7 +1,7 @@
 # Aim to convert RGB in to Grayscale
 # Use dictionary(surjection) to do the mapping
 class Pixel (object):
-initial set: a pixel itself can be interpreted by RGB and Grayscale, like 2 properties
+# initial set: a pixel itself can be interpreted by RGB and Grayscale, like 2 properties
 def _init_(self, RGB, gray):
 self.RGB = RGB
 self.gray = gray
@@ -19,6 +19,6 @@ design = [Pixel((86, 0, 255), G_1), Pixel((0, 255, 50), G_2), Pixel((1, 255, 50)
 # across the grayscale spectrum in a way that is data-informative: naively an even
 #distribution might work but you won't know this until you run it on some images
 Mapping = dict([(p.RGB, p.gray) for p in design])
-# The result will look like ((0, 0, 1):1, (1, 2, 3):6, ..., (255, 255, 255): 2551
+# The result will look like ((0, 0, 1):1, (1, 2, 3):6, ..., (255, 255, 255): 255
 # Definition of surjection: function f: A->B, for all b in B, there exists at least one a in A such that f(a)=b
 
