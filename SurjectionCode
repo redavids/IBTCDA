@@ -1,3 +1,9 @@
+from scipy import misc
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.cm as cm
+np.set_printoptions(threshold=np.inf)
+
 # Aim to convert RGB in to Grayscale
 # Use dictionary(surjection) to do the mapping
 class Pixel (object):
@@ -10,7 +16,8 @@ self.gray = gray
 # Then we design the mapping ourselves, with data set for both RGB and Grayscale
 # An example for a raw idea; G 1, G 2 are both grayscales, should be replaced with a number 0-255
 # We want all RGB color pickers in the "rainbow"
-design = [Pixel((86, 0, 255), G_1), Pixel((0, 255, 50), G_2), Pixel((1, 255, 50), G_2), Pixel((r, g, b), G_255)]
+#pseudo code for understanding the surjection relation
+design = [Pixel((86, 0, 255), G_1), Pixel((0, 255, 50), G_2), Pixel((1, 255, 50), G_2), ..., Pixel((r, g, b), G_255)]
 # Since surjection, we'll have two RGB tuples mapping to one Grayscale integer
 # Question: (a, b, cl), (a, b, c2) -> G1 ?
 # OR (a, bl, cl), (a, b2, c2) -> G1 ?
@@ -22,3 +29,33 @@ Mapping = dict([(p.RGB, p.gray) for p in design])
 # The result will look like ((0, 0, 1):1, (1, 2, 3):6, ..., (255, 255, 255): 255
 # Definition of surjection: function f: A->B, for all b in B, there exists at least one a in A such that f(a)=b
 
+#image=misc.imread('\Users\Sophie\Downloads\Kaz_Original.png')
+image=misc.imread('\Users\Sophie\Downloads\Kaz_small.png')
+#print (image[0])
+
+#plt.imshow(image) #Loads Image
+#plt.show() #Shows the image window
+
+# Since we've tried "Average Method" and "Luminosity Method" which are both linear relationships, where "Average Method" is using arithmetic mean of RGB values and "Luminosity Method" is using linear combination of RGB values with assigned coefficients, here we use two other means of calculating which construct non-linear surjection relations
+
+#Geometric method (geometric mean)
+def geometric(pixel):
+    return (pixel [0] * pixel [1] * pixel [2]) ** (1/3)
+
+#Harmonic method (harmonic mean)
+#def harmonic(pixel):
+    #return (3 / (1 / pixel [0] + 1 / pixel [1] + 1 / pixel [2]))
+
+grey = np.zeros((image.shape[0], image.shape[1]))
+for rownum in range(len(image)):
+    for colnum in range(len(image[rownum])):
+        grey[rownum][colnum] = average(image[rownum][colnum])
+        #use line below when running modedversion function for our code
+	#grey[rownum][colnum] = modedversion(image[rownum][colnum])
+plt.imshow(grey, cmap = cm.Greys_r)
+plt.show() #This pushes out the image that we use in the other block of code to anaylzse for persistent pairs
+
+#image=misc.imread('C:\\Users\\Chris\\Downloads\\cat.jpg')
+#print(image) #Gives the RGB values for all pixels. The Inner most brackers give the RGB values for the rows
+#print (image.shape) #Gives the height and width of the image
+#print (image[0]) #Gives RGB values for row 0
